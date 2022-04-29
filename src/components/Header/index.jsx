@@ -15,10 +15,10 @@ const Header = () => {
       <Heading
         as='h1'
         size='lg'
-        color='gray.700'
-        textShadow='-9px 9px 5px rgb(0, 0, 0, 0.5)'
+        color='gray.500'
+        textShadow='-9px 9px 5px rgb(0, 0, 0, 0.5), 1px 1px 0 black'
       >
-        Kenzie Shop
+        Kenzie <Box as='span' color='red.500'>Shop</Box>
       </Heading>
       <Center as='nav'>
         <Link
