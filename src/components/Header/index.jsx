@@ -11,6 +11,9 @@ const Header = () => {
       justify='space-between'
       bg='teal.100'
       boxShadow='md'
+      position='fixed'
+      top={0}
+      width='100%'
     >
       <Heading
         as='h1'

@@ -1,5 +1,6 @@
 import {
   Button,
+  Center,
   Flex,
   Heading,
   Icon,
@@ -8,10 +9,12 @@ import {
 } from "@chakra-ui/react"
 import { AiOutlinePlus } from 'react-icons/ai'
 
-const Showcase = ({ product: { name, price, image }, ...rest }) => {
+const Showcase = ({ product: { id, name, price, image }, ...rest }) => {
   return (
     <Flex {...rest}>
-      <Image src={image} alt={name} h={300} w={400} />
+      {id && <Center as='figure' w={400}>
+        <Image src={image} alt={name} h={300} />
+      </Center>}
       <Flex
         justify='space-between'
         direction='column'
@@ -20,27 +23,32 @@ const Showcase = ({ product: { name, price, image }, ...rest }) => {
       >
         <Heading
           as='h2'
-          size='md'
+          size='lg'
           h={5}
           flex={1}
         >
-          {name}
+          {name || 'Nenhum produto foi selecionado'}
         </Heading>
-        <Text
-          as='b'
-          color='green.500'
-          textAlign='right'
-        >
-          {Intl.NumberFormat(
-            'pt-BR',
-            { style: 'currency', currency: 'BRL' }
-          ).format(price)}
-        </Text>
-        <Button
-          mt={2}
-          colorScheme='telegram'
-          leftIcon={<Icon as={AiOutlinePlus} />}
-        >Adicionar ao carrinho</Button>
+        {id && <>
+          <Text
+            as='b'
+            color='green.500'
+            textAlign='right'
+            fontSize='2xl'
+          >
+            {Intl.NumberFormat(
+              'pt-BR',
+              { style: 'currency', currency: 'BRL' }
+            ).format(price || 0)}
+          </Text>
+          <Button
+            mt={2}
+            colorScheme='telegram'
+            leftIcon={<Icon as={AiOutlinePlus} />}
+          >
+            Adicionar ao carrinho
+          </Button>
+        </>}
       </Flex>
     </Flex>
   )

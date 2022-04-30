@@ -15,7 +15,7 @@ const ProductList = ({ products, setProduct }) => {
       p={4}
       overflow='auto'
       spacing={10}
-      mt={20}
+      mt={125}
       divider={<StackDivider borderColor='gray.200' />}
     >
       {products.map((product) => (
