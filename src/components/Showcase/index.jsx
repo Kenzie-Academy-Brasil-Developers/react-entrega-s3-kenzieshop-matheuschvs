@@ -26,6 +26,7 @@ const Showcase = ({ product: { id, name, price, image }, ...rest }) => {
           size='lg'
           h={5}
           flex={1}
+          color='gray.600'
         >
           {name || 'Nenhum produto foi selecionado'}
         </Heading>

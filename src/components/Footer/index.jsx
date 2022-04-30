@@ -9,7 +9,7 @@ const Footer = () => {
       p={5}
       bg='blackAlpha.100'
     >
-      <Text>Feito com 💜 por Matheus C.</Text>
+      <Text>Feito com ❤ por <Text as='strong'>Matheus C.</Text></Text>
       <Link
         target='_blank'
         ml={4}
