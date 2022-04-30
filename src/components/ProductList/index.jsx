@@ -8,7 +8,7 @@ import {
   StackDivider
 } from "@chakra-ui/react"
 
-const ProductList = ({ products }) => {
+const ProductList = ({ products, setProduct }) => {
   return (
     <HStack
       as='ul'
@@ -18,15 +18,15 @@ const ProductList = ({ products }) => {
       mt={20}
       divider={<StackDivider borderColor='gray.200' />}
     >
-      {products.map(({ id, name, image }) => (
+      {products.map((product) => (
         <Box
           as='li'
-          key={id}
+          key={product.id}
           w={150}
           listStyleType='none'
           borderRadius={10}
         >
-          <Image src={image} alt={name} h={150} />
+          <Image src={product.image} alt={product.name} h={150} />
           <Flex
             direction='column'
             justify='space-between'
@@ -39,11 +39,12 @@ const ProductList = ({ products }) => {
               h={5}
               isTruncated
             >
-              {name}
+              {product.name}
             </Heading>
             <Button
               mt={2}
               borderRadius={0}
+              onClick={() => setProduct(product)}
             >Exibir</Button>
           </Flex>
         </Box>
