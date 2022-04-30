@@ -1,8 +1,11 @@
 import { BsCart3 } from 'react-icons/bs'
 import { Link as RouterLink } from 'react-router-dom'
 import { Box, Center, Circle, Flex, Heading, Icon, Link } from "@chakra-ui/react"
+import { useSelector } from 'react-redux'
 
 const Header = () => {
+  const cart = useSelector(({ cart }) => cart)
+
   return (
     <Flex
       as='header'
@@ -52,7 +55,9 @@ const Header = () => {
               bg='twitter.500'
               color='yellow.100'
               fontSize='x-small'
-            >5</Circle>
+            >
+              {cart.length}
+            </Circle>
           </Box>
           Carrinho
         </Link>

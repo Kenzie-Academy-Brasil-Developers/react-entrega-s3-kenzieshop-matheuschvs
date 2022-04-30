@@ -15,6 +15,7 @@ const Products = () => {
     <Flex
       as='main'
       direction="column"
+      minHeight='100vh'
     >
       <ProductList products={products} setProduct={setProduct} />
       <Showcase product={product} mt={50} mb={100} p={10} />

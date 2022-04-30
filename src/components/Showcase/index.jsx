@@ -8,10 +8,15 @@ import {
   Text
 } from "@chakra-ui/react"
 import { AiOutlinePlus } from 'react-icons/ai'
+import { useDispatch } from 'react-redux'
 
-const Showcase = ({ product: { id, name, price, image }, ...rest }) => {
+import { addProduct } from '../../store/modules/cart/actions'
+
+const Showcase = ({ product, product: { id, name, price, image }, ...rest }) => {
+  const dispatch = useDispatch()
+
   return (
-    <Flex {...rest}>
+    <Flex {...rest} as='section'>
       {id && <Center as='figure' w={400}>
         <Image src={image} alt={name} h={300} />
       </Center>}
@@ -20,6 +25,7 @@ const Showcase = ({ product: { id, name, price, image }, ...rest }) => {
         direction='column'
         ml={10}
         flex={1}
+        as='article'
       >
         <Heading
           as='h2'
@@ -46,6 +52,7 @@ const Showcase = ({ product: { id, name, price, image }, ...rest }) => {
             mt={2}
             colorScheme='telegram'
             leftIcon={<Icon as={AiOutlinePlus} />}
+            onClick={() => dispatch(addProduct(product))}
           >
             Adicionar ao carrinho
           </Button>
