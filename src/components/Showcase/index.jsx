@@ -17,15 +17,22 @@ const Showcase = ({ product, product: { id, name, price, image }, ...rest }) => 
 
   return (
     <Center>
-      <Flex {...rest} as='section' maxW={1037}>
-        {id && <Center as='figure' w={400}>
+      <Flex
+        {...rest}
+        as='section'
+        maxW={1037}
+        align='center'
+        direction={['column', 'column', 'row']}
+      >
+        {id && <Center as='figure' w={[300, 400]}>
           <Image src={image} alt={name} h={300} />
         </Center>}
         <Flex
           justify='space-between'
           direction='column'
-          ml={10}
+          ml={[0, 10]}
           flex={1}
+          p={[5, 0]}
           as='article'
         >
           <Heading

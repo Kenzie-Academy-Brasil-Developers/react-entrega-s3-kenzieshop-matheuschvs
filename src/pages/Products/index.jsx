@@ -20,7 +20,7 @@ const Products = () => {
       <Heading
         as='h1'
         color='gray.700'
-        mt={125}
+        mt={[150, 125]}
         mb={10}
         textAlign='center'
         textShadow='2px 2px 0 black'
@@ -28,7 +28,7 @@ const Products = () => {
         🚴 BICICLETAS ⬇
       </Heading>
       <ProductList products={products} setProduct={setProduct} />
-      <Showcase product={product} mt={50} mb={100} p={10} />
+      <Showcase product={product} mt={50} mb={100} p={[0, 10]} />
     </Flex>
   )
 }

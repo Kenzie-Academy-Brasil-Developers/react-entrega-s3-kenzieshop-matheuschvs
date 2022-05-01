@@ -11,6 +11,8 @@ const Header = () => {
       as='header'
       padding={4}
       paddingX={6}
+      direction={['column', 'row']}
+      align='center'
       justify='space-between'
       bg='teal.100'
       boxShadow='md'
@@ -24,6 +26,7 @@ const Header = () => {
         size='lg'
         color='gray.500'
         textShadow='-9px 9px 5px rgb(0, 0, 0, 0.5), 1px 1px 0 black'
+        mb={[2, 0]}
       >
         Kenzie <Box as='span' color='red.500'>Shop</Box>
       </Heading>
