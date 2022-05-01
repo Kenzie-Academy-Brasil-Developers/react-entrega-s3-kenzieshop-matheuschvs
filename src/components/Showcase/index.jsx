@@ -10,7 +10,7 @@ import {
 import { AiOutlinePlus } from 'react-icons/ai'
 import { useDispatch } from 'react-redux'
 
-import { addProduct } from '../../store/modules/cart/actions'
+import { addProductThunk } from "../../store/modules/cart/thunks"
 
 const Showcase = ({ product, product: { id, name, price, image }, ...rest }) => {
   const dispatch = useDispatch()
@@ -53,7 +53,7 @@ const Showcase = ({ product, product: { id, name, price, image }, ...rest }) => 
               mt={2}
               colorScheme='telegram'
               leftIcon={<Icon as={AiOutlinePlus} />}
-              onClick={() => dispatch(addProduct(product))}
+              onClick={() => dispatch(addProductThunk(product))}
             >
               Adicionar ao carrinho
             </Button>

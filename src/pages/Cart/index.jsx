@@ -17,7 +17,7 @@ const Cart = () => {
         textAlign='center'
         textShadow='2px 2px 0 black'
       >
-        🛍 Carrinho ⬇
+        🛍 CARRINHO ⬇
       </Heading>
       <CartList />
     </Flex>

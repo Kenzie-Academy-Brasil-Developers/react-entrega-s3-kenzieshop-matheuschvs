@@ -14,10 +14,10 @@ import { BsTrash } from 'react-icons/bs'
 import { useDispatch, useSelector } from 'react-redux'
 
 import {
-  increaseQuantity,
-  decreaseQuantity,
-  removeProduct
-} from '../../store/modules/cart/actions'
+  decreaseQuantityThunk,
+  increaseQuantityThunk,
+  removeProductThunk
+} from "../../store/modules/cart/thunks"
 
 const CartList = () => {
   const cart = useSelector(({ cart }) => cart)
@@ -105,7 +105,7 @@ const CartList = () => {
                       fontSize='2xl'
                       bg='red.200'
                       borderRadius={0}
-                      onClick={() => dispatch(decreaseQuantity(product))}
+                      onClick={() => dispatch(decreaseQuantityThunk(product))}
                     >-</Button>
                     <Text as='b'>{quantity}</Text>
                     <Button
@@ -113,10 +113,10 @@ const CartList = () => {
                       fontSize='2xl'
                       bg='green.200'
                       borderRadius={0}
-                      onClick={() => dispatch(increaseQuantity(product))}
+                      onClick={() => dispatch(increaseQuantityThunk(product))}
                     >+</Button>
                   </Box>
-                  <Button onClick={() => dispatch(removeProduct(product))}>
+                  <Button onClick={() => dispatch(removeProductThunk(product))}>
                     <Icon as={BsTrash} mr={2} />
                     remover
                   </Button>

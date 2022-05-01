@@ -1,9 +1,12 @@
 import {
+  LOAD_PRODUCTS,
   ADD_PRODUCT,
   INCREASE_QUANTITY,
   DECREASE_QUANTITY,
   REMOVE_PRODUCT
 } from "./actionTypes";
+
+export const loadProducts = products => ({ type: LOAD_PRODUCTS, payload: products })
 
 export const addProduct = product => ({ type: ADD_PRODUCT, payload: product })
 
