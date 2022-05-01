@@ -17,6 +17,7 @@ const Header = () => {
       position='fixed'
       top={0}
       width='100%'
+      zIndex={3}
     >
       <Heading
         as='h1'
