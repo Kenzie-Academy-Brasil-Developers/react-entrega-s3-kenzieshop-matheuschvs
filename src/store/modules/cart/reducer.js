@@ -10,6 +10,7 @@ const cartReducer = (state = [], { type, payload }) => {
       }
 
       objectInCart[0].quantity += 1
+      objectInCart[0].price *= objectInCart[0].quantity
       return state
     default:
       return state;
