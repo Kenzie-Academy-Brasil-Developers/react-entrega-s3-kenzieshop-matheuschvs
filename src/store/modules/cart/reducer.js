@@ -1,17 +1,23 @@
-import { ADD_PRODUCT } from './actionTypes'
+import { ADD_PRODUCT, INCREASE_QUANTITY, DECREASE_QUANTITY } from './actionTypes'
 
 const cartReducer = (state = [], { type, payload }) => {
+  const objectInCart = state.filter(cartItem => cartItem.id === payload.id)[0]
+  const rest = state.filter(cartItem => cartItem.id !== payload.id)
+
   switch (type) {
     case ADD_PRODUCT:
-      const objectInCart = state.filter(cartItem => cartItem.id === payload.id)
-
-      if (objectInCart.length <= 0) {
-        return [...state, { quantity: 1, ...payload }]
+      if (!objectInCart) {
+        return [...rest, { quantity: 1, ...payload }]
       }
 
-      objectInCart[0].quantity += 1
-      objectInCart[0].price *= objectInCart[0].quantity
-      return state
+      objectInCart.quantity += 1
+      return [...rest, objectInCart]
+    case INCREASE_QUANTITY:
+      objectInCart.quantity += 1
+      return [...rest, objectInCart]
+    case DECREASE_QUANTITY:
+      objectInCart.quantity -= 1
+      return [...rest, objectInCart]
     default:
       return state;
   }
