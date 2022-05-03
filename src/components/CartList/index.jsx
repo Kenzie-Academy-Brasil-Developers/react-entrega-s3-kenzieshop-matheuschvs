@@ -10,6 +10,7 @@ import {
   Text,
   VStack
 } from "@chakra-ui/react"
+import { motion } from "framer-motion"
 import { BsTrash } from 'react-icons/bs'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -60,11 +61,12 @@ const CartList = () => {
       </Flex>
       <Center>
         <VStack
-          as='ul'
+          as={motion.ul}
           mt={15}
           mb={100}
           divider={<StackDivider borderColor='gray.200' />}
           maxW={[300, 400, 750, 990, 1037]}
+          animate={{ translateY: [1000, 1] }}
         >
           {cart.length === 0 && <Box as='li'>
             <Heading as='h4' size='md' color='tertiary.900'>

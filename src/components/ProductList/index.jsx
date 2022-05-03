@@ -7,23 +7,26 @@ import {
   Image,
   StackDivider
 } from "@chakra-ui/react"
+import { motion } from "framer-motion"
 
 const ProductList = ({ products, setProduct }) => {
   return (
     <HStack
-      as='ul'
+      as={motion.ul}
       p={4}
       overflow='auto'
       spacing={10}
       divider={<StackDivider borderColor='secondary.200' />}
+      animate={{ translateX: [-1000, 1] }}
     >
       {products.map((product) => (
         <Box
-          as='li'
+          as={motion.li}
           key={product.id}
           w={150}
           listStyleType='none'
           borderRadius={10}
+          animate={{ scale: [0, 1] }}
         >
           <Image
             src={product.image}

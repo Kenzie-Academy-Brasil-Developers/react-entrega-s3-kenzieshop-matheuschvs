@@ -7,6 +7,7 @@ import {
   Image,
   Text
 } from "@chakra-ui/react"
+import { motion } from "framer-motion"
 import { AiOutlinePlus } from 'react-icons/ai'
 import { useDispatch } from 'react-redux'
 
@@ -25,7 +26,13 @@ const Showcase = ({ product, product: { id, name, price, image }, ...rest }) => 
         direction={['column', 'column', 'row']}
       >
         {id && <Center as='figure' w={[300, 400]}>
-          <Image src={image} alt={name} h={300} />
+          <Image
+            as={motion.img}
+            whileHover={{ scale: 1.1 }}
+            src={image}
+            alt={name}
+            h={300}
+          />
         </Center>}
         <Flex
           justify='space-between'
