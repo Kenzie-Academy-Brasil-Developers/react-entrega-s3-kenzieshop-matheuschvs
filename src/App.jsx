@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
 
 import './App.css';
 
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <div className="App">
+      <ToastContainer />
       <Router />
     </div>
   );
