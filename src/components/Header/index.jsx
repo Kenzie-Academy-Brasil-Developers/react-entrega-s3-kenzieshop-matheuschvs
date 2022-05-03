@@ -1,3 +1,4 @@
+import { AiOutlineUser } from 'react-icons/ai'
 import { BsCart3 } from 'react-icons/bs'
 import { Link as RouterLink } from 'react-router-dom'
 import { Box, Center, Circle, Flex, Heading, Icon, Link } from "@chakra-ui/react"
@@ -21,15 +22,26 @@ const Header = () => {
       width='100%'
       zIndex={3}
     >
-      <Heading
-        as='h1'
-        size='lg'
-        color='gray.500'
-        textShadow='-9px 9px 5px rgb(0, 0, 0, 0.5), 1px 1px 0 black'
-        mb={[2, 0]}
-      >
-        Kenzie <Box as='span' color='red.500'>Shop</Box>
-      </Heading>
+      <Center>
+        <Circle
+          mr={3}
+          w={10}
+          h={10}
+          background='teal.500'
+          boxShadow='0 0 3px 2px #319795'
+        >
+          <Icon size={20} as={AiOutlineUser} />
+        </Circle>
+        <Heading
+          as='h1'
+          size='lg'
+          color='gray.500'
+          textShadow='-9px 9px 5px rgb(0, 0, 0, 0.5), 1px 1px 0 black'
+          mb={[2, 0]}
+        >
+          Kenzie <Box as='span' color='red.500'>Shop</Box>
+        </Heading>
+      </Center>
       <Center as='nav'>
         <Link
           as={RouterLink}
@@ -60,7 +72,7 @@ const Header = () => {
               color='yellow.100'
               fontSize='x-small'
             >
-              {cart.length}
+              {cart.reduce((acc, item) => acc += item.quantity, 0)}
             </Circle>
           </Box>
           Carrinho
