@@ -6,6 +6,7 @@ import {
 
 import { ProductList } from '../../components/ProductList'
 import { Showcase } from "../../components/Showcase"
+import { ThemeChanger } from "../../components/ThemeChanger"
 
 const Products = () => {
   const products = useSelector(({ products }) => products)
@@ -17,10 +18,15 @@ const Products = () => {
       direction="column"
       minHeight='100vh'
     >
+      <ThemeChanger
+        mt={[125, 100]}
+        alignSelf='flex-end'
+        mr={5}
+        mb={5}
+      />
       <Heading
         as='h1'
         color='secondary.900'
-        mt={[150, 125]}
         mb={10}
         textAlign='center'
         textShadow='2px 2px 2px black'
