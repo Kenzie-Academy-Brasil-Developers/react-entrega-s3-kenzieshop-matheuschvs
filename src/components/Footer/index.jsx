@@ -1,5 +1,4 @@
 import { Center, Icon, Link, Text } from "@chakra-ui/react"
-import { motion } from "framer-motion"
 import { AiOutlineLinkedin, AiOutlineGithub } from 'react-icons/ai'
 
 const Footer = () => {
@@ -8,15 +7,15 @@ const Footer = () => {
       as='footer'
       width='100%'
       p={5}
-      bg='tertiary.100'
+      bg='tertiary.200'
       color='primary.900'
     >
       <Text>
         Feito com
         <Text
           as='span'
-          color='secondary.900'
-          _hover={{ color: 'secondary.100' }}
+          color='secondary.500'
+          _hover={{ color: 'secondary.900' }}
           transition='color 0.3s'
         > ❤ </Text>
         por <Text as='strong'>Matheus C.</Text></Text>
