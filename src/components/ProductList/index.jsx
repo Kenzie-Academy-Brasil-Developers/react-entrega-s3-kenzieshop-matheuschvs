@@ -15,7 +15,7 @@ const ProductList = ({ products, setProduct }) => {
       p={4}
       overflow='auto'
       spacing={10}
-      divider={<StackDivider borderColor='gray.200' />}
+      divider={<StackDivider borderColor='secondary.200' />}
     >
       {products.map((product) => (
         <Box
@@ -25,11 +25,16 @@ const ProductList = ({ products, setProduct }) => {
           listStyleType='none'
           borderRadius={10}
         >
-          <Image src={product.image} alt={product.name} h={150} />
+          <Image
+            src={product.image}
+            alt={product.name}
+            h={150}
+            borderTopRadius={3}
+          />
           <Flex
             direction='column'
             justify='space-between'
-            p={2}
+            paddingTop={2}
             borderTop='1px solid rgb(0, 0, 0, 0.3)'
           >
             <Heading
@@ -37,6 +42,7 @@ const ProductList = ({ products, setProduct }) => {
               size='xs'
               h={5}
               isTruncated
+              color='primary.900'
             >
               {product.name}
             </Heading>
@@ -44,6 +50,10 @@ const ProductList = ({ products, setProduct }) => {
               mt={2}
               borderRadius={0}
               onClick={() => setProduct(product)}
+              borderColor='tertiary.500'
+              color='tertiary.900'
+              variant='outline'
+              _hover={{ bg: 'tertiary.500', color: 'tertiary.100' }}
             >Exibir</Button>
           </Flex>
         </Box>

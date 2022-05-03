@@ -5,6 +5,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { Provider } from 'react-redux';
 
 import { store } from './store'
+import { light } from './themes'
 
 import 'react-toastify/dist/ReactToastify.min.css';
 import './global.css';
@@ -15,7 +16,7 @@ import App from './App';
 const root = createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    <ChakraProvider>
+    <ChakraProvider theme={light} >
       <BrowserRouter>
         <React.StrictMode>
           <App />

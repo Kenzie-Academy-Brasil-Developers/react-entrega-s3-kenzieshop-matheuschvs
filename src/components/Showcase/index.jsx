@@ -40,14 +40,15 @@ const Showcase = ({ product, product: { id, name, price, image }, ...rest }) => 
             size='lg'
             h={5}
             flex={1}
-            color='gray.600'
+            color='secondary.900'
+            textShadow='1px 1px 0 black'
           >
             {name || 'Nenhum produto foi selecionado'}
           </Heading>
           {id && <>
             <Text
               as='b'
-              color='green.500'
+              color='tertiary.900'
               textAlign='right'
               fontSize='2xl'
             >
@@ -58,9 +59,11 @@ const Showcase = ({ product, product: { id, name, price, image }, ...rest }) => 
             </Text>
             <Button
               mt={2}
-              colorScheme='telegram'
               leftIcon={<Icon as={AiOutlinePlus} />}
               onClick={() => dispatch(addProductThunk(product))}
+              bg='primary.500'
+              color='primary.100'
+              _hover={{ bg: 'primary.100', color: 'primary.500' }}
             >
               Adicionar ao carrinho
             </Button>

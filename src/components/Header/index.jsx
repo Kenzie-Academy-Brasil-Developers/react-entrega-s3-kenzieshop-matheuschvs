@@ -15,7 +15,7 @@ const Header = () => {
       direction={['column', 'row']}
       align='center'
       justify='space-between'
-      bg='teal.100'
+      bg='primary.100'
       boxShadow='md'
       position='fixed'
       top={0}
@@ -27,26 +27,26 @@ const Header = () => {
           mr={3}
           w={10}
           h={10}
-          background='teal.500'
-          boxShadow='0 0 3px 2px #319795'
+          background='primary.400'
+          boxShadow={`0 0 3px 2px #6BBCBC`}
         >
-          <Icon size={20} as={AiOutlineUser} />
+          <Icon w='20px' h='20px' color='primary.900' as={AiOutlineUser} />
         </Circle>
         <Heading
           as='h1'
           size='lg'
-          color='gray.500'
+          color='primary.900'
           textShadow='-9px 9px 5px rgb(0, 0, 0, 0.5), 1px 1px 0 black'
           mb={[2, 0]}
         >
-          Kenzie <Box as='span' color='red.500'>Shop</Box>
+          Kenzie <Box as='span' color='secondary.900'>Shop</Box>
         </Heading>
       </Center>
       <Center as='nav'>
         <Link
           as={RouterLink}
           to='/'
-          color='red.500'
+          color='secondary.900'
           fontWeight='bold'
           p={2}
           borderRadius={3}
@@ -54,7 +54,7 @@ const Header = () => {
         <Link
           as={RouterLink}
           to='/cart'
-          color='teal.500'
+          color='primary.900'
           ml='2.5'
           fontWeight='bold'
           p={2}
@@ -68,8 +68,8 @@ const Header = () => {
               right={0}
               w={4}
               h={4}
-              bg='twitter.500'
-              color='yellow.100'
+              bg='tertiary.900'
+              color='tertiary.100'
               fontSize='x-small'
             >
               {cart.reduce((acc, item) => acc += item.quantity, 0)}

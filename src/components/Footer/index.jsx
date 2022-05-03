@@ -7,9 +7,13 @@ const Footer = () => {
       as='footer'
       width='100%'
       p={5}
-      bg='blackAlpha.100'
+      bg='tertiary.100'
+      color='primary.900'
     >
-      <Text>Feito com ❤ por <Text as='strong'>Matheus C.</Text></Text>
+      <Text>
+        Feito com
+        <Text as='span' color='secondary.900'> ❤ </Text>
+        por <Text as='strong'>Matheus C.</Text></Text>
       <Link
         target='_blank'
         ml={4}
@@ -25,7 +29,7 @@ const Footer = () => {
         href='https://github.com/matheuschvs'
       >
         <Center>
-          <Icon w={5} h={5} as={AiOutlineGithub} />
+          <Icon w={5} h={5} as={AiOutlineGithub} color='black' />
         </Center>
       </Link>
     </Center>

@@ -2,6 +2,18 @@
   top: 5em
 }
 
+.Toastify__toast-theme--light {
+  color: var(--chakra-colors-primary-900);
+}
+
+.Toastify__toast-theme--light.Toastify__toast--success svg {
+  fill: var(--chakra-colors-primary-900);
+}
+
+.Toastify__progress-bar--success {
+  background: var(--chakra-colors-primary-900);
+}
+
 @media only screen and (max-width: 480px) {
   .Toastify__toast-container--top-right {
     top: unset;

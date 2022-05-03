@@ -31,10 +31,16 @@ const CartList = () => {
         justify='space-around'
       >
         <Box p={5}>
-          <Heading as='h2' size='lg' mr={5} display='inline-block'>
+          <Heading
+            as='h2'
+            size='lg'
+            mr={5}
+            display='inline-block'
+            color='primary.900'
+          >
             Valor Total:
           </Heading>
-          <Text as='b' color='green.700' fontSize='2xl'>
+          <Text as='b' color='tertiary.900' fontSize='2xl'>
             {Intl.NumberFormat('pt-BR', {
               style: 'currency',
               currency: 'BRL'
@@ -44,8 +50,10 @@ const CartList = () => {
           </Text>
         </Box>
         <Button
-          colorScheme='whatsapp'
           variant='outline'
+          borderColor='primary.900'
+          color='primary.900'
+          _hover={{ bg: 'primary.900', color: 'primary.100' }}
           minW={{ base: 300, xl: 800 }}
           mb={[10, 0]}
         >Finalizar Compra</Button>
@@ -59,10 +67,10 @@ const CartList = () => {
           maxW={[300, 400, 750, 990, 1037]}
         >
           {cart.length === 0 && <Box as='li'>
-            <Heading as='h4' size='md' color='burlywood'>
+            <Heading as='h4' size='md' color='tertiary.900'>
               Que pena, Seu carrinho está vazio!
             </Heading>
-            <Text>
+            <Text color='secondary.500'>
               Volte e adicione produtos para atualizar a lista
             </Text>
           </Box>}
@@ -93,6 +101,7 @@ const CartList = () => {
                     size='md'
                     mt={5}
                     mb={10}
+                    color='primary.900'
                     isTruncated
                   >
                     {name}
@@ -100,7 +109,7 @@ const CartList = () => {
                   <Text
                     fontSize='xl'
                     as='b'
-                    color='green.700'
+                    color='tertiary.900'
                     textAlign='right'
                   >
                     {Intl.NumberFormat(
@@ -112,12 +121,14 @@ const CartList = () => {
                     alignItems='flex-end'
                     justifyContent={['space-between', 'space-between', 'flex-end']}
                   >
-                    <Box mr={10}>
+                    <Box mr={10} color='primary.900'>
                       <Text>Quantidade: </Text>
                       <Button
                         mr={2}
                         fontSize='2xl'
-                        bg='red.200'
+                        bg='secondary.100'
+                        color='secondary.900'
+                        _hover={{ bg: 'secondary.500', color: 'secondary.100' }}
                         borderRadius={0}
                         onClick={() => dispatch(decreaseQuantityThunk(product))}
                       >-</Button>
@@ -125,12 +136,19 @@ const CartList = () => {
                       <Button
                         ml={2}
                         fontSize='2xl'
-                        bg='green.200'
+                        bg='primary.100'
+                        color='primary.900'
+                        _hover={{ bg: 'primary.500', color: 'primary.100' }}
                         borderRadius={0}
                         onClick={() => dispatch(increaseQuantityThunk(product))}
                       >+</Button>
                     </Box>
-                    <Button onClick={() => dispatch(removeProductThunk(product))}>
+                    <Button
+                      bg='secondary.100'
+                      color='secondary.500'
+                      _hover={{ bg: 'secondary.500', color: 'secondary.100' }}
+                      onClick={() => dispatch(removeProductThunk(product))}
+                    >
                       <Icon as={BsTrash} mr={2} />
                       remover
                     </Button>

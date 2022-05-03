@@ -11,11 +11,11 @@ const Cart = () => {
     >
       <Heading
         as='h1'
-        color='gray.700'
+        color='secondary.900'
         mt={[150, 125]}
         mb={10}
         textAlign='center'
-        textShadow='2px 2px 0 black'
+        textShadow='2px 2px 2px black'
       >
         🛍 CARRINHO ⬇
       </Heading>
