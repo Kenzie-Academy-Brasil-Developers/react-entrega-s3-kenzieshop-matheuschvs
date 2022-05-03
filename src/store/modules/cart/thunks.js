@@ -1,3 +1,5 @@
+import { toast } from 'react-toastify';
+
 import {
   addProduct,
   increaseQuantity,
@@ -20,6 +22,7 @@ export const addProductThunk = product => (dispatch, getState) => {
   }
 
   localStorage.setItem('@kenzieShop:cart', JSON.stringify(newCart))
+  toast.success('Produto adicionado ao carrinho!')
   dispatch(addProduct(newCart))
 }
 
@@ -56,5 +59,6 @@ export const removeProductThunk = product => (dispatch, getState) => {
   const rest = cart.filter(cartItem => cartItem.id !== product.id)
 
   localStorage.setItem('@kenzieShop:cart', JSON.stringify(rest))
+  toast.success('Produto removido do carrinho!')
   dispatch(removeProduct(rest))
 }
