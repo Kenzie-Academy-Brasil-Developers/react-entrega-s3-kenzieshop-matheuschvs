@@ -25,19 +25,31 @@ const CartList = () => {
 
   return (
     <Flex direction='column'>
-      <Box p={5}>
-        <Heading as='h2' size='lg' mr={5} display='inline-block'>
-          Valor Total:
-        </Heading>
-        <Text as='b' color='green.700' fontSize='2xl'>
-          {Intl.NumberFormat('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
-          }).format(cart.reduce(
-            (acc, item) => acc += item.price * item.quantity, 0
-          ))}
-        </Text>
-      </Box>
+      <Flex
+        direction={{ base: 'column', md: 'row', xl: 'column' }}
+        align='center'
+        justify='space-around'
+      >
+        <Box p={5}>
+          <Heading as='h2' size='lg' mr={5} display='inline-block'>
+            Valor Total:
+          </Heading>
+          <Text as='b' color='green.700' fontSize='2xl'>
+            {Intl.NumberFormat('pt-BR', {
+              style: 'currency',
+              currency: 'BRL'
+            }).format(cart.reduce(
+              (acc, item) => acc += item.price * item.quantity, 0
+            ))}
+          </Text>
+        </Box>
+        <Button
+          colorScheme='whatsapp'
+          variant='outline'
+          minW={{ base: 300, xl: 800 }}
+          mb={[10, 0]}
+        >Finalizar Compra</Button>
+      </Flex>
       <Center>
         <VStack
           as='ul'
