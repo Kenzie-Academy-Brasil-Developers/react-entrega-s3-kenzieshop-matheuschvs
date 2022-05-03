@@ -17,7 +17,7 @@ const ProductList = ({ products, setProduct }) => {
       overflow='auto'
       spacing={10}
       divider={<StackDivider borderColor='secondary.200' />}
-      animate={{ translateX: [-1000, 1] }}
+      animate={{ translateX: [-1000, 0] }}
     >
       {products.map((product) => (
         <Box
